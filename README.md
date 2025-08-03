@@ -93,8 +93,6 @@ FROM 'C:\Users\dell\Desktop\trip 2024\202401-divvy-tripdata.csv'
 DELIMITER ','
 CSV HEADER;
 
-
-
 create table trip_February (
 	ride_id VARCHAR,
     rideable_type VARCHAR ,
@@ -165,11 +163,6 @@ DELIMITER ','
 CSV HEADER
 ;
 
-
-select * from trip_march
-
-
-
 create table trip_April (
 	ride_id VARCHAR,
     rideable_type VARCHAR ,
@@ -205,8 +198,6 @@ DELIMITER ','
 CSV HEADER
 ;
 
-
-
 create table trip_May (
 	ride_id VARCHAR,
     rideable_type VARCHAR ,
@@ -222,7 +213,6 @@ create table trip_May (
     end_lng DECIMAL,
     member_casual VARCHAR
 ) 
-
 COPY  trip_May  (
     ride_id,
     rideable_type ,
@@ -310,8 +300,7 @@ COPY  trip_July (
     start_lng ,
     end_lng ,
     end_lat ,
-    member_casual )
-
+    member_casual ) ;
 
 create table trip_August (
 	ride_id VARCHAR,
@@ -421,7 +410,6 @@ DELIMITER ','
 CSV HEADER
 ;
 
-
 create table trip_November(
 	ride_id VARCHAR,
     rideable_type VARCHAR ,
@@ -457,10 +445,6 @@ FROM 'C:\Users\dell\Desktop\trip 2024\202411-divvy-tripdata.csv'
 DELIMITER ','
 CSV HEADER
 ;
-
-
-
-
 create table trip_December(
 	ride_id VARCHAR,
     rideable_type VARCHAR ,
@@ -501,6 +485,128 @@ CSV HEADER
 Create main table and union all month table 
 
 ``` sql
+create table trip as 
+(
+   select * from trip_january
+	
+	union all 
+	select * from trip_february
+	
+	union all 
+	select * from trip_march
+	
+	union all 
+	select * from trip_april
+	
+	union all 
+	select * from trip_may
+	
+	union all 
+	select * from trip_june
+	
+	union all 
+	select * from trip_july
+	
+	
+	union all 
+	
+	select * from  trip_august  
+	
+	union all
+	select * from trip_september
+	
+	union all 
+	select * from trip_october
+	
+	union all 
+	select* from trip_november
+	
+	union all 
+	select * from trip_december
+
+) ;
+
+```
+
+## Cleaning data 
+
+```sql
+
+	---CHEACK DUPLICATE 
+	select ride_id , count(*)
+	from trip 
+	group by ride_id 
+	having count(*) !=1
+```
+ ## Copy only clean and unique row (no duplicate)
+ ``` sql
+ 
+	create table bike_share (
+	    ride_id VARCHAR(255) , 
+	    rideable_type VARCHAR(255) ,
+	    started_at TIMESTAMP,
+	    ended_at TIMESTAMP,
+	    start_station_name VARCHAR,
+	    start_station_id VARCHAR,
+	    end_station_name VARCHAR,
+	    end_station_id VARCHAR ,
+	    start_lat DECIMAL,
+	    start_lng DECIMAL,
+	    end_lat DECIMAL,
+	    end_lng DECIMAL,
+	    member_casual VARCHAR
+	);
+	 insert into bike_share (
+	
+	    ride_id  , 
+	    rideable_type  ,
+	    started_at ,
+	    ended_at ,
+	    start_station_name ,
+	    start_station_id ,
+	    end_station_name ,
+	    end_station_id  ,
+	    start_lat ,
+	    start_lng ,
+	    end_lat ,
+	    end_lng ,
+	    member_casual 
+	)
+	select 
+	    ride_id,
+	    lower (trim(rideable_type)) as rideable_type  ,
+	    started_at,
+	    ended_at,
+	    lower (trim(start_station_name)) as start_station_name,
+	    lower(trim(start_station_id)) as start_station_id ,
+	    lower(trim (end_station_name)) as end_station_name,
+	    lower(trim(end_station_id))as end_station_id,
+	    start_lat ,
+	    start_lng ,
+	    end_lng ,
+	    end_lat ,
+	    lower(trim(member_casual)) as member_casual 
+	from (
+          select * ,
+		  row_number () over ( partition by ride_id order by started_at desc ) as row_num
+		  from data_trip 
+
+	)h 
+	where row_num=1 ;
+
+```
+## fix name and id stations (exemple)
+``` sql
+update bike_share 
+set  end_station_id ='ta1306000016'
+where end_station_id ='13060';
+
+
+update bike_share 
+set  end_station_id ='ta1309000036'
+where end_station_id ='13208';
+
+```
 
   
 
