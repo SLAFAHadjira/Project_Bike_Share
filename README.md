@@ -16,3 +16,17 @@ annual members and casual riders differ, why casual riders would buy a membershi
 digital media could affect their marketing tactics
 
 ### Key Word
+Casual riders : Customers who purchase single-ride or full-day passes 
+
+Members : Customers who purchase annual memberships 
+
+
+# Analysis process 
+
+ ## Ask 
+
+1_How do annual members and casual riders use Cyclistic bikes differently? 
+
+## prepare 
+
+
