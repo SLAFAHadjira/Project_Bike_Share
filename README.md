@@ -594,6 +594,27 @@ create table trip as
 	)h 
 	where row_num=1 ;
 
+-- delete rong date
+delete from bike_share 
+WHERE ended_at < started_at;
+
+--delete null values
+delete from bike_share
+ where ride_id is null
+or rideable_type is null 
+ or started_at is null
+ or ended_at is null 
+ or start_station_name is null
+ or start_station_id is null 
+ or end_station_name is null
+ or end_station_id  is null
+ or start_lat is null
+ or start_lng is null
+ or end_lat is null
+  or end_lng is null
+  or member_casual is null
+;
+
 ```
 ## fix name and id stations (exemple)
 ``` sql
