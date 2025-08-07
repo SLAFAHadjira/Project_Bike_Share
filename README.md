@@ -49,8 +49,8 @@ Members : Customers who purchase annual memberships
 * end_lng: the longitude of the ending station
 * member_casual: the type of rider (member, casual)
   
-
-- I choose postersql to gather and clean data
+## 3 Process : 
+## postersql as database to work with data 
 
   Create a database
  ```sql
@@ -89,7 +89,7 @@ COPY  trip_January (
     end_lng ,
     end_lat ,
     member_casual )
-FROM 'C:\Users\dell\Desktop\trip 2024\202401-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER;
 
@@ -123,7 +123,7 @@ COPY  trip_February  (
     end_lng ,
     end_lat ,
     member_casual )
-FROM 'C:\Users\dell\Desktop\trip 2024\202402-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -158,7 +158,7 @@ COPY  trip_March  (
     end_lng ,
     end_lat ,
     member_casual )
-FROM 'C:\Users\dell\Desktop\trip 2024\202403-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -193,7 +193,7 @@ COPY  trip_april  (
     end_lng ,
     end_lat ,
     member_casual )
-FROM 'C:\Users\dell\Desktop\trip 2024\202404-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -227,7 +227,7 @@ COPY  trip_May  (
     end_lng ,
     end_lat ,
     member_casual )
-FROM 'C:\Users\dell\Desktop\trip 2024\202405-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -264,12 +264,10 @@ COPY  trip_June (
     member_casual )
 
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202406-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
-
-
 
 create table trip_July (
 	ride_id VARCHAR,
@@ -333,7 +331,7 @@ COPY  trip_August (
     end_lat ,
     member_casual )
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202408-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -369,7 +367,7 @@ COPY  trip_September (
     end_lat ,
     member_casual )
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202409-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -405,7 +403,7 @@ COPY  trip_October (
     end_lat ,
     member_casual )
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202410-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -441,7 +439,7 @@ COPY  trip_November (
     end_lat ,
     member_casual )
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202411-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -476,7 +474,7 @@ COPY  trip_December (
     end_lat ,
     member_casual )
 
-FROM 'C:\Users\dell\Desktop\trip 2024\202412-divvy-tripdata.csv'
+FROM 'Path of the file'
 DELIMITER ','
 CSV HEADER
 ;
@@ -506,7 +504,6 @@ create table trip as
 	
 	union all 
 	select * from trip_july
-	
 	
 	union all 
 	
@@ -594,7 +591,7 @@ create table trip as
 	)h 
 	where row_num=1 ;
 
--- delete rong date
+-- delete bad date
 delete from bike_share 
 WHERE ended_at < started_at;
 
@@ -616,7 +613,7 @@ or rideable_type is null
 ;
 
 ```
-## fix name and id stations (exemple)
+## Fix name and id start and end stations (exemple)
 ``` sql
 update bike_share 
 set  end_station_id ='ta1306000016'
@@ -628,6 +625,25 @@ set  end_station_id ='ta1309000036'
 where end_station_id ='13208';
 
 ```
+
+
+
+## 4 Analyse 
+
+in this step i
+1-  __ride_length__ :  Calculate the length of each ride by subtracting  "started_at" from " ended_at" .
+
+2- __day_of_week__ : the day of the week that each ride noting that (1 = Sunday and 7 =Saturday) 
+
+3- __Week_day_end__ : calulate weekend and work day 
+
+4- Calculate the mean of ride_length (AVg ride  length )
+
+5- Calculate the max ride_length ( longest ride length )
+
+
+ALL THE DETAIL I CREARTE A DASHBORD IN POWER BI  THE LINK (
+
 
   
 
