@@ -645,6 +645,9 @@ in this step i
 ALL THE DETAIL I CREARTE A DASHBORD IN POWER BI  THE LINK (
 
 
+# Resulats
+- 63.84 % of bikes users are annual members while 36.16% of bikes users are casual riders
+
   
 
 
