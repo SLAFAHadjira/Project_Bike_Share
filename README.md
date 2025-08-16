@@ -1,4 +1,12 @@
-# Project_Bike_Share   
+# Project_Bike_Share    
+
+
+
+
+
+![logo](https://raw.githubusercontent.com/SLAFAHadjira/Project_Bike_Share/6e5874e6fc6da5286005f117199b6de28f0a48ce/bike%20share%20picture.png)
+
+
 
 Cyclistic bike-share analysis case study!
  ### About the company 
