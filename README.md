@@ -652,6 +652,7 @@ in this step i
 
 
 ## I have completed all the analysis steps in Power BI. Please find below a dashboard image .
+ ![image_alt](https://github.com/SLAFAHadjira/Project_Bike_Share/blob/main/bike%20share%20dashbord.png?raw=true)
 
 ## If you need further information, please refer to the attached file. 
 # Resulats
