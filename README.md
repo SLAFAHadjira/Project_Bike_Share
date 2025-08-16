@@ -651,13 +651,42 @@ in this step i
 
 
 
-## I have completed all the analysis steps in Power BI. Please find below a dashboard image .
+### **I have completed all the analysis steps in Power BI. Please find below a dashboard image .**
  ![image_alt](https://github.com/SLAFAHadjira/Project_Bike_Share/blob/main/bike%20share%20dashbord.png?raw=true)
 
-## If you need further information, please refer to the attached file. 
+### If you need further information, please refer to the attached file. 
 # Resulats
 
 - 63.84 % of bikes users are annual members while 36.16% of bikes users are casual riders
+  
+## Total ride per month 
+- Annual members recorded the highest number of bike trips in September 2024 (320854) , and the lowest in january 2022, with 113808 .
+- Casual riders recorded the highest number of bike trips in September 2024 (231970) , for lowest in 17713 .
+
+## The averege ride length (mean) :
+  **11:41:08**
+
+ ## the longest ride length  :
+  **25: 09 :22** 
+  
+  ##  The day most all ride is :   
+  **Saturday**
+
+
+  ## Stations :
+  For annual members, **Kingsbury St & Kinzie St** seems to be the most popular starting station .
+  
+  For casual members, **Streeter Dr & Grand Ave** was the most common starting station.
+
+
+
+  # Act 
+  These some recommendation : 
+  
+  1- Offering discounts and running promotions where casual ridership is low to encourage them to use the service on a consistent basis. 
+  
+  2- Use social media for more advertisements,Design a mobile app and include features such as geotracking of bike locations, mobile bike unlocking.
+   
 
   
 
