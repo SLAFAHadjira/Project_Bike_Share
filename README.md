@@ -636,7 +636,7 @@ where end_station_id ='13208';
 
 
 
-## 4 Analyse 
+## 4-Analyse 
 
 in this step i
 1-  __ride_length__ :  Calculate the length of each ride by subtracting  "started_at" from " ended_at" .
@@ -650,10 +650,12 @@ in this step i
 5- Calculate the max ride_length ( longest ride length )
 
 
-ALL THE DETAIL I CREARTE A DASHBORD IN POWER BI  THE LINK (
 
+## I have completed all the analysis steps in Power BI. Please find below a dashboard image .
 
+## If you need further information, please refer to the attached file. 
 # Resulats
+
 - 63.84 % of bikes users are annual members while 36.16% of bikes users are casual riders
 
   
